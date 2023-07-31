@@ -3,25 +3,25 @@ This is code sample for my MLH fellowship application.
 
 Instructions to arrange the files in corresponding folders
 1. Create a  folder named "__pycache__"
-    Move the following files inside __pycache__:
-     config.cpython-311
-     controllers.cpython-311
-     database.cpython-311
-     models.cpython-311
+    1. Move the following files inside __pycache__:
+    2. config.cpython-311
+    3. controllers.cpython-311
+    4. database.cpython-311
+    5.  models.cpython-311
 
 2. Create a  folder named  "application"
-    Move the  __pycache__ folder inside application folder
-    Move the following files inside application:
-       config.py
-       controllers.py
-       database.py
-       models.py
+    1. Move the  __pycache__ folder inside application folder
+    2.  Move the following files inside application:
+    3.  config.py
+    4.  controllers.py
+    5.  database.py
+    6.   models.py
 
 3. Create a  floder named "instance"
-   Move the file db inside instance
+   1. Move the file db inside instance
 
 4. Create a folder named "templates"
-   Move all the filed with ".html" extension inside templates 
+   1.  Move all the filed with ".html" extension inside templates 
        
 After creating the folders and moving all files as per the instructions follow the below instructions.       
 
@@ -33,8 +33,8 @@ Instructions to run the server
 5. run "python Code/main.py"
 
 Also if you wish to use a new database , you can delete the database provided , and just run again the main.py and database would be created. But , you need to make sure that you explicitly insert two rows into the role  table which are:
-(1,'admin','can create ,update and delete events and venues')
-(2,'user','can book events and venues')
+1. (1,'admin','can create ,update and delete events and venues')
+2. (2,'user','can book events and venues')
 The last value in both the rows defines the description of the role 
 You can insert the rows using db , or using any database application.
 
