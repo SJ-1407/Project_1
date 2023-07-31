@@ -1,5 +1,30 @@
 # Project_1
 This is code sample for my MLH fellowship application.
+
+Instructions to arrange the files in corresponding folders
+1. Create a  folder named "__pycache__"
+    Move the following files inside __pycache__:
+     config.cpython-311
+     controllers.cpython-311
+     database.cpython-311
+     models.cpython-311
+
+2. Create a  folder named  "application"
+    Move the  __pycache__ folder inside application folder
+    Move the following files inside application:
+       config.py
+       controllers.py
+       database.py
+       models.py
+
+3. Create a  floder named "instance"
+   Move the file db inside instance
+
+4. Create a folder named "templates"
+   Move all the filed with ".html" extension inside templates 
+       
+After creating the folders and moving all files as per the instructions follow the below instructions.       
+
 Instructions to run the server
 1. cd into the current folder
 2. run "python -m venv env"
