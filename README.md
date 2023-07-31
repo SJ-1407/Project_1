@@ -18,7 +18,7 @@ Instructions to arrange the files in corresponding folders
     6.   models.py
 
 3. Create a  floder named "instance"
-   1. Move the file db inside instance
+   1. Move the file db.sqlite3 inside instance
 
 4. Create a folder named "templates"
    1.  Move all the filed with ".html" extension inside templates 
