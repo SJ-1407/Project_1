@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's Booked Tickets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>User's Booked Tickets</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Venue Name</th>
+                <th>Event Name</th>
+                <th>No. of Tickets</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ticket in user_tickets %}
+            <tr>
+                {% for ve in ve %}
+                  {% if ve.ve_id == ticket.ve_id %}
+                    {% for e in event %}
+                      {% if e.event_id == ve.e_id %}
+                          <td>{{ e.name }}</td>
+                      {% endif %}
+                    {% endfor %}
+                    
+                     {% for v in venue %}
+                      {% if v.venue_id == ve.v_id %}
+                      <td>{{ v.name }}</td>
+                      {% endif %}
+                     {% endfor %}
+                  {% endif %}
+                {% endfor %}
+                <td>{{ ticket.tickets }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">Home</a>
+</body>
+</html>

@@ -1,0 +1,7 @@
+Flask
+Flask-SQLAlchemy
+flask-restful
+flask-cors
+Flask-Security
+email_validator
+flask-bcrypt
