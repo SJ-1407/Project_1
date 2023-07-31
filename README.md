@@ -4,10 +4,10 @@ This is code sample for my MLH fellowship application.
 Instructions to arrange the files in corresponding folders
 1. Create a  folder named "__pycache__"
     1. Move the following files inside __pycache__:
-    2. config.cpython-311
-    3. controllers.cpython-311
-    4. database.cpython-311
-    5.  models.cpython-311
+    2. config.cpython-311.pyc
+    3. controllers.cpython-311.pyc
+    4. database.cpython-311.pyc
+    5.  models.cpython-311.pyc
 
 2. Create a  folder named  "application"
     1. Move the  __pycache__ folder inside application folder
