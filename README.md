@@ -23,7 +23,8 @@ Instructions to arrange the files in corresponding folders
 4. Create a folder named "templates"
    1.  Move all the filed with ".html" extension inside templates 
        
-After creating the folders and moving all files as per the instructions follow the below instructions.       
+ After creating the folders and moving all files as per the instructions follow the below instructions.   
+ You can look at the screenshot images for reference.
 
 Instructions to run the server
 1. cd into the current folder
