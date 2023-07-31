@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venue</title>
+</head>
+<body>
+    <h1>Removing Venues</h1>
+    <form method="POST">
+        <h3>Select Venues to remove</h3>
+        {% for v in venue %}
+        
+        <label for ="venue">{{v['name']}}</label>
+            <input type="checkbox" name=venue value="{{v['name']}}">
+          
+        
+        {% endfor %}
+        <br>
+
+        <input type="submit" value="Submit">
+            
+    </form>
+    <a href="{{ url_for('index') }}">Home</a>    
+</body>
+</html>
+
+
+
+
+
