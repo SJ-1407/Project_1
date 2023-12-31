@@ -1,5 +1,5 @@
 This is a ticket booking web app , which has two types of client admin and user.  A user can book tickets for any particular event happening on any particular venue, can search for venues and events , see her order history, invoice of the recent order. An admin , on the other end can add , remove and update
-events and venues. Authorization is being performd in the web app using bcrypt.
+events and venues. Authorization is being performed in the web app using bcrypt.
  
 ## Setup
 
