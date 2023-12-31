@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,89 @@
     </form>
     <a href="{{ url_for('index') }}">Home</a>    
 </body>
+</html>  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Venues</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe5e5;
+            color: #721c24;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #721c24;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-check-input {
+            background-color: #e74c3c;
+        }
+        .form-check-label {
+            color: #e74c3c;
+        }
+        input[type="submit"] {
+            background-color: #c82333;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #b21f2d;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            text-align: center;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Removing Venues</h1>
+    <form method="POST">
+        <div class="form-group">
+            <h3>Select Venues to remove</h3>
+            {% for v in venue %}
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="venue" value="{{v['name']}}" id="{{v['name']}}">
+                <label class="form-check-label" for="{{v['name']}}">
+                    {{v['name']}}
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+        <input type="submit" class="btn btn-danger" value="Remove">
+    </form>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Home</a>
+</body>
 </html>
+
 
 
 

@@ -50,17 +50,18 @@
             <tr>
                 {% for ve in ve %}
                   {% if ve.ve_id == ticket.ve_id %}
-                    {% for e in event %}
-                      {% if e.event_id == ve.e_id %}
-                          <td>{{ e.name }}</td>
-                      {% endif %}
-                    {% endfor %}
-                    
+                  
                      {% for v in venue %}
                       {% if v.venue_id == ve.v_id %}
                       <td>{{ v.name }}</td>
                       {% endif %}
                      {% endfor %}
+                     {% for e in event %}
+                     {% if e.event_id == ve.e_id %}
+                         <td>{{ e.name }}</td>
+                     {% endif %}
+                   {% endfor %}
+                   
                   {% endif %}
                 {% endfor %}
                 <td>{{ ticket.tickets }}</td>
@@ -70,4 +71,5 @@
     </table>
     <a href="{{ url_for('index') }}">Home</a>
 </body>
-</html>
+</html>  
+

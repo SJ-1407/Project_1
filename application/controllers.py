@@ -275,19 +275,48 @@ def update_event():
 
 
 
-@app.route("/book_venue",methods=["GET","POST"])
+'''@app.route("/book_venue",methods=["GET","POST"])
 def book_venue():
    if request.method=="GET":
       venues=Venue.query.all()
 
       return (render_template("book_venue.html",venue=venues))
 
-@app.route("/book_event",methods=["GET","POST"])
-def book_event():
+@app.route("/book_venue/<int:venue_id>",methods=["GET","POST"])
+def book_venue(venue_id):
    if request.method=="GET":
-      event=Event.query.all()
+      venues=Venue.query.get(venue_id)
 
-      return (render_template("book_event.html",event=event))
+      return (render_template("book_venue.html",venue=venues))'''
+
+@app.route("/book_venue", methods=["GET", "POST"])
+@app.route("/book_venue/<int:venue_id>", methods=["GET", "POST"])
+def book_venue(venue_id=None):
+    if request.method == "GET":
+        if venue_id is not None:
+            # If venue_id is provided, query the specific venue
+            venue = Venue.query.get(venue_id)
+         
+            return render_template("book_venue.html", venues=[venue])
+        else:
+            # If venue_id is not provided, retrieve all venues
+            venues = Venue.query.all()
+            return render_template("book_venue.html", venues=venues)
+
+
+@app.route("/book_event",methods=["GET","POST"])
+@app.route("/book_event/<int:event_id>", methods=["GET", "POST"])
+def book_event(event_id=None):
+   if request.method == "GET":
+        if event_id is not None:
+            # If venue_id is provided, query the specific venue
+            event = Event.query.get(event_id)
+         
+            return render_template("book_event.html", event=[event])
+        else:
+            # If venue_id is not provided, retrieve all venues
+            events = Event.query.all()
+            return render_template("book_event.html", event=events)
    
 @app.route("/book/<int:id>/<int:venue_id>",methods=["GET","POST"])
 def book(id,venue_id):

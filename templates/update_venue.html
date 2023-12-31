@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,4 +36,107 @@
     </form>    
     <a href="{{ url_for('index') }}">Home</a>
 </body>
+</html>  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Venue</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa; 
+            color: #343a40; 
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #6a82fb; 
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da; 
+            border-radius: 5px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        input[type="submit"] {
+            background-color: #6a82fb; 
+            color: #fff; 
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #4452af; 
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #6a82fb; 
+            text-decoration: none;
+            text-align: center;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Updating Venues</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="venue_id">Select Venue</label>
+            <select class="form-control" id="venue" name="venue_id">
+                {% for v in venue %}
+                <option value="{{v.venue_id}}">{{ v['name'] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="name">Name of Venue</label>
+            <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="location">Location of Venue</label>
+            <input type="text" name="location" required>
+        </div>
+        <div class="form-group">
+            <label for="capacity">Capacity of Venue</label>
+            <input type="number" name="capacity" required>
+        </div>
+        <h3>Select Events</h3>
+        {% for e in events %}        
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="event" value="{{e['name']}}" id="{{e['name']}}">
+            <label class="form-check-label" for="{{e['name']}}">
+                {{e['name']}}
+            </label>
+        </div>
+        {% endfor %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Home</a>
+</body>
 </html>
+

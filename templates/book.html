@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,6 +21,90 @@
        <input type =text name="tickets">
        <input type="submit" value="Book">
     </form>
+    <a href="{{ url_for('index') }}">Home</a>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Event</title>
+    <style>
+        body {
+            background-color: #2d3b48;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #5ebd3e;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        label {
+            color: #5ebd3e;
+            margin-right: 10px;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #5ebd3e;
+            color: #2d3b48;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4a9c30;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #5ebd3e;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: #ff6f61;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <h1>Name of Event: {{ event['name'] }}</h1>
+    <p>
+        Duration of Event: {{ event['duration'] }}<br><br>
+        Ticket Price: {{ event['price'] }}<br><br>
+        Seats Left: {{ v_e['capacity'] }}
+    </p>
+
+    <form method="POST">
+        <label for="tickets">Number of Tickets to Book:</label>
+        <input type="text" name="tickets" required>
+        <input type="submit" value="Book">
+    </form>
+
     <a href="{{ url_for('index') }}">Home</a>
 </body>
 </html>
